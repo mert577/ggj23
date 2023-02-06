@@ -19,6 +19,21 @@ public class UtilityFunctions : MonoBehaviour
   }
 
 
+  public static Vector2 GetOrthagonalDirection(Vector2 direction){
+    return new Vector2(direction.y, -direction.x);
+  }
+
+
+  public static float Map(float value, float inMin, float inMax, float outMin, float outMax){
+    return (value - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
+  }
+
+  
+  public static void CameraShake(){
+    Camera.main.transform.DORewind();
+    Camera.main.transform.DOShakePosition(0.5f, 0.5f, 10, 90, false, true);
+  }
+
   public static void TimeStop(float duration){
     Time.timeScale = 0f;
     DOTween.To(()=>Time.timeScale, x=>Time.timeScale = x, 1f, duration).SetEase(Ease.OutCubic);

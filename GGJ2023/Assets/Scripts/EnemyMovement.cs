@@ -18,6 +18,8 @@ public class EnemyMovement : MonoBehaviour
 
     public List<Transform> otherEnemies;
 
+    public static bool canMove= true;
+
 
     
     Rigidbody2D rb;
@@ -59,10 +61,18 @@ public class EnemyMovement : MonoBehaviour
         GetObstacleMap();
         GetInterestMap();
         
-
-        rb.velocity = GetDirection()*speed*randomSpeedModifier;
+        if(canMove){
+           rb.velocity = GetDirection()*speed*randomSpeedModifier;
+        }
+        else{
+            rb.velocity = Vector2.zero;
+        }
+       
     }
 
+
+
+    
     IEnumerator UpdateObstacles()
     {
 

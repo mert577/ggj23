@@ -7,6 +7,8 @@ public class Seed : MonoBehaviour
 {
 
     public GameObject explodePrefab;
+
+    public static float stayOnGroundTime = 3f;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,17 +32,17 @@ public class Seed : MonoBehaviour
     }
 
     IEnumerator DestorySelf(){  
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(stayOnGroundTime);
         Tween tween = transform.DOScale(0f, 0.3f);
         yield return tween.WaitForCompletion();
 
         Destroy(gameObject);
     }
-    void Activate(){
+   public  void Activate(){
 
         //TODO ACTUAL ACTIVATION CODE
         GameObject explode = Instantiate(explodePrefab, transform.position, Quaternion.identity);
-       UtilityFunctions.TimeStop(0.25f);
+     //  UtilityFunctions.TimeStop(0.25f);
 
         Destroy(gameObject);
     }

@@ -108,7 +108,6 @@ MonoBehaviour:
   dangerRadius: 1.7
   obstacles: []
   otherEnemies: []
-  oscilateFrequency: 2
 --- !u!50 &1748467714113498093
 Rigidbody2D:
   serializedVersion: 4
@@ -158,10 +157,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47b8658017086f942a65ceee655a9738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2
+  maxHealth: 6
   currentHealth: 0
   hurtParticlePrefab: {fileID: 2924561120643490943, guid: 035f4e309bb431745a964ce72bac0e56, type: 3}
   deathParticlePrefab: {fileID: 2924561120643490943, guid: 035f4e309bb431745a964ce72bac0e56, type: 3}
+  materialPrefab: {fileID: 6810903129240155273, guid: b9a3c5b3740f52c4197e09f0314bcfce, type: 3}
+  knockbackForce: 4
 --- !u!1 &3316752755439848716
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,7 +173,7 @@ GameObject:
   m_Component:
   - component: {fileID: 583497088393590947}
   - component: {fileID: 8222489128746178764}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Drainer
   m_TagString: Drainer
   m_Icon: {fileID: 0}

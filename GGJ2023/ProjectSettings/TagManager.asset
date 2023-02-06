@@ -9,6 +9,7 @@ TagManager:
   - Root
   - Damager
   - Drainer
+  - Material
   layers:
   - Default
   - TransparentFX
@@ -22,8 +23,8 @@ TagManager:
   - Root
   - Seed
   - Activator
-  - 
-  - 
+  - Material
+  - Drainer
   - 
   - 
   - 
